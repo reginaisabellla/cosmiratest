@@ -1,0 +1,319 @@
+/*HEADER START*/
+
+/* @font-face import section start */
+
+/* Inter import */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../assests/fonts/Inter/Inter-Regular.otf");
+  /* src: url("../assests/fonts/Inter/Inter-Bold.otf") format("bold");
+  src: url("../assests/fonts/Inter/Inter-Italic.otf") format("italic");
+  src: url("../assests/fonts/Inter/Inter-BoldItalic.otf") format("bolditalic");
+  font-weight: normal;
+  font-style: normal; */
+}
+
+/* Lexend Deca import */
+@font-face {
+  font-family: "LexendDeca";
+  src: url("../assests/fonts/LexendDeca/LexendDecaRegular.ttf");
+}
+
+/* @font-face import section end */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.heading {
+  background-image: url("../assests/img/glitter.gif");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  height: 87px;
+}
+
+.logo img {
+  height: 90px;
+  width: 300px;
+}
+
+/* Search Bar */
+.search input {
+  padding: 10px 80px;
+  border-radius: 15px;
+  margin-right: 20px;
+  border: none;
+  outline: none;
+  background: rgba(132, 139, 198, 0.555);
+  font-family: Inter;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  background-color: #8076af;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: Inter;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e5d0ff;
+}
+
+/*HEADER END*/
+
+/* applying fonts start */
+
+h1 {
+  font-family: Inter;
+  font-size: 2rem;
+}
+
+body {
+  font-family: LexendDeca;
+}
+
+button {
+  font-family: LexendDeca;
+}
+
+/* applying fonts end */
+
+body {
+  background-image: radial-gradient(#7e573c, #280e31);
+  background-attachment: fixed;
+  margin: 0;
+  background-color: #0a0213;
+  color: white;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  height: calc(100vh - 60px);
+  gap: 25px;
+  margin: 25px;
+}
+
+/* Sidebar */
+.sidebar {
+  background: radial-gradient(#402e56db, #cab0b0c5); /* Gradient background */
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
+.product-heading {
+  background-color: rgba(59, 42, 77, 0.9); /* Matching the sidebar background */
+  padding: 20px;
+  border-radius: 10px 10px 0px 0px;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0px 0px 20px 0px;
+  width: 100%;
+  color: #fff;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.product-image {
+  width: 140px;
+  height: 140px;
+  background-color: #aaa;
+  border-radius: 10px;
+  margin: 20px 50px 50px 50px;
+}
+
+.search-box {
+  width: 80%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  background-color: #c1b1d5ef;
+  color: #333;
+  font-size: 1.2rem;
+  font-family: LexendDeca;
+}
+
+.average-rating p {
+  margin: 50px 0 5px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.stars span {
+  font-size: 30px;
+  color: #f5c518;
+}
+
+.create-review {
+  margin-top: auto;
+  margin-bottom: 50px;
+  padding: 12px 24px;
+  background-color: #281e34ae;
+  border: none;
+  border-radius: 20px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.create-review:hover {
+  background-color: #5e4c75ae;
+}
+
+/* Reviews Section */
+.reviews-section {
+  font-size: 1.2rem;
+  flex-grow: 1;
+  background-color: #c1b1d55e;
+  color: #333;
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.reviews-heading {
+  background-color: rgba(59, 42, 77, 0.9); /* Matching the sidebar background */
+  padding: 20px;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
+  font-size: 1.8rem;
+  margin: 0px;
+  width: 100%;
+  color: #fff;
+}
+
+.reviews-container {
+  background: radial-gradient(#cab0b090, #281e34ee);
+  overflow-y: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+.review {
+  background-color: #c1b1d5e6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.tag {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 1rem;
+  margin-right: 10px;
+  color: #fff;
+}
+
+.medium-coverage {
+  background-color: #b7dbff;
+  color: #281e34ff;
+}
+.natural-finish {
+  background-color: #defdc7;
+  color: #281e34ff;
+}
+.long-wear {
+  background-color: #b7c3ff;
+  color: #281e34ff;
+}
+
+#shade1 {
+  background-color: #3a2415;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: auto;
+  border: 2px solid white;
+}
+
+#shade2 {
+  background-color: #bc8d6a;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: auto;
+  border: 2px solid white;
+}
+
+#shade3 {
+  background-color: #674226;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: auto;
+  border: 2px solid white;
+}
+.rating {
+  font-size: 1.2rem;
+  color: #281e34ff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

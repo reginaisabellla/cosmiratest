@@ -1,0 +1,238 @@
+/*HEADER START*/
+@font-face {
+  font-family: "Hkreg";
+  src: url("../fonts/HankenGrotesk-Regular.ttf") format("truetype");
+  src: url("../fonts/HankenGrotesk-Bold.ttf") format("bold");
+  src: url("../fonts/HankenGrotesk-SemiBoldItalic.ttf") format("bolditalic");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.heading {
+  background-image: url("../assests/img/glitter.gif");
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: sticky;
+  top: 0;
+  height: 87px;
+}
+
+.logo img {
+  height: 90px;
+  width: 300px;
+}
+
+/* Search Bar */
+.search input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 80px;
+  padding-right: 60px;
+  border-radius: 15px;
+  background:none;
+  border: none;
+  outline: none;
+  font-family: "Hkreg" format("truetype");
+  font-size: 15px;
+  text-align: center;
+  
+}
+
+input::placeholder{ color: rgba(255, 255, 255, 0.632)  ; }
+
+input{
+  color: white;
+}
+
+.search{
+  background: rgba(132, 139, 198, 0.555);
+  margin-right: 20px;
+  border-radius: 15px;
+}
+
+#searchButton{
+  background: #8076af;
+  border-radius: 15px;
+  padding: 10px;
+  border: solid 1px #8076af;
+}
+#searchButton :hover{
+  background-color: #8076afbc;
+  cursor: pointer;
+}
+
+i{
+  color: white;
+  
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  background-color: #8076af;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 30px;
+  font-family: "Hkreg" format("bold");
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e5d0ff;
+}
+
+/*HEADER END*/
+
+/* search page start*/
+
+body {
+  background-image: radial-gradient(#7e573c, #280e31);
+  background-attachment: fixed;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0a0213;
+  color: white;
+}
+
+/* grid for search content*/
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 15px;
+  padding: 5px;
+}
+.searchPic {
+  max-width: 275px;
+  border: #280e31 solid 3px;
+  border-radius: 10px;
+}
+figure {
+  position: relative;
+}
+
+figcaption {
+  /* position: absolute; */
+  color: #402E56;
+  font-size: 30px;
+  text-align: center;
+  /* backdrop-filter: blur(14px) brightness(75%); */
+  /* margin-bottom: 5px;
+  cursor: pointer; */
+}
+h2 {
+  text-align: center;
+  /* background-color: #60376c; */
+  background-image: url(../assests/img/Shining-Stars-Landing-Header.png);
+  padding: 5px;
+  margin-top: 5px;
+  margin: 0;
+  height: 50px;
+}
+
+.pageSearch{
+  background-image: url(../assests/img/Shining-Stars-Landing-Header.png);
+  height: 50px;
+}
+
+.pageInput{
+  margin-left: 30%;
+  background-color: #532f895d;
+  height: 35px;
+  width: 450px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 23px;
+
+}
+
+.pageInput ::placeholder{
+  color: #ffffff;
+}
+
+#pageButton{
+  background-color: #0a02130b;
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  margin-top: 5px;
+  
+}
+ol {
+  font-size: 30px;
+  margin-top: 0;
+  margin-left: 55px;
+}
+li {
+  padding: 5px;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: underline;
+  color: white;
+}
+
+
+
+.trending {
+  display: flex;
+  flex-wrap: nowrap;
+
+  grid-row: 1/4;
+  background-color: #a495b8;
+  padding-bottom: 60.5px;
+  padding-top: 20px;
+  margin-top: 0;
+}
+
+.searchGrid{
+  background-color: #a495b8;
+}
+
+.row1 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #a495b8;
+  padding-bottom: 5px;
+  gap: 25px;
+  padding-top: 75px;
+}
+
+.row2 {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  background-color: #a495b8;
+  padding-bottom: 10px;
+  gap: 25px;
+  padding-top: 25px;
+}
+

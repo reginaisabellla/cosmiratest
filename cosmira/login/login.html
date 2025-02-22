@@ -1,0 +1,100 @@
+<!-- need to add the basic doctype info -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cosmira</title>
+    <!-- need to link css pages -->
+    <link rel="stylesheet" href="../login/login.css" />
+  </head>
+  <body>
+    <header>
+      <div class="heading">
+        <div class="logo">
+          <a href="https://reginaisabellla.github.io/cosmirarep/">
+          <img src="../assests/img/cos-removebg.png" alt="Cosmira Logo" />
+          </a>
+        </div>
+        <div class="search">
+          <input type="text" placeholder="S E A R C H" />
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-links">
+          <li>
+            <a class="nav-link" href="../about/about.html">ABOUT</a>
+          </li>
+          <li><a class="nav-link" href="../quiz/quiz.html">QUIZ</a></li>
+          <li>
+            <a class="nav-link" href="../discover/discover.html">DISCOVER</a>
+          </li>
+          <li>
+            <a class="nav-link" href="../community/community.html">COMMUNITY</a>
+          </li>
+          <li>
+            <a class="nav-link" href="../profile/profile.html">PROFILE</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- making the login form -->
+    <div class="bothSides">
+      <div class="login">
+        <form action="../login/process_login.php" method="post" name="logIn">
+          <fieldset>
+            <legend>Login to Cosmira!</legend>
+
+            <label for="userName">Username:</label>
+            <input type="text" name="userName" />
+            <span id="userName"></span>
+
+            <label for="passWord">Password:</label>
+            <input type="text" name="passWord" />
+            <span id="passWord"></span>
+
+            <input id="submitLogin" type="submit" name="submit" value="Login" />
+            <p title="coming soon!">forgot password?</p>
+          </fieldset>
+        </form>
+      </div>
+      <!-- or option -->
+
+      <div class="option">
+        <h2>OR</h2>
+      </div>
+
+      <!-- creating account page -->
+      <div class="createAccount">
+        <form
+          action="../login/process_user.php"
+          method="post"
+          name="createAccount"
+        >
+          <fieldset>
+            <legend>Create a Cosmira Account!</legend>
+
+            <label for="newUsername">Username:</label>
+            <input type="text" name="newUsername" />
+            <span id="newUsername"></span>
+
+            <label for="email">Email Address:</label>
+            <input type="text" name="email" />
+            <span id="email"></span>
+
+            <label for="newPassword">Password:</label>
+            <input type="text" name="newPassword" />
+            <span id="newPassword"></span>
+
+            <input
+              id="submitUser"
+              type="submit"
+              name="submit"
+              value="Create Account"
+            />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
