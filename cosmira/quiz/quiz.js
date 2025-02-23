@@ -1,4 +1,4 @@
-document.querySelector('.matchbutton').addEventListener('click', async function(event) {
+document.querySelector('form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent form from reloading page
 
     // Collect quiz answers
@@ -11,6 +11,7 @@ document.querySelector('.matchbutton').addEventListener('click', async function(
         finish: document.querySelector('input[name="finish"]:checked')?.value || null
     };
 
+    console.log("Submitting quiz answers:", answers);
     // Send answers to the backend
     const response = await fetch('https://cosmiratest.onrender.com/api/match-results', {
         method: 'POST',
