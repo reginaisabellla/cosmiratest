@@ -1,4 +1,4 @@
-document.querySelector('form').addEventListener('submit', async function(event) {
+document.querySelector('quiz-form').addEventListener('submit', async function(event) {
     event.preventDefault(); // Prevent form from reloading page
 
     // Collect quiz answers
