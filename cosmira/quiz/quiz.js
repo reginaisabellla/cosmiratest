@@ -12,7 +12,7 @@ document.querySelector('.matchbutton').addEventListener('click', async function(
     };
 
     // Send answers to the backend
-    const response = await fetch('/api/match-results', {
+    const response = await fetch('https://cosmiratest.onrender.com/api/match-results', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(answers)
