@@ -20,6 +20,6 @@ document.querySelector('.matchbutton').addEventListener('click', async function(
 
     const data = await response.json();
 
-    // Redirect user to match-results.html and pass product data in URL
-    window.location.href = `../results.html?products=${encodeURIComponent(JSON.stringify(data.products))}`;
+    // Redirect user to results.html and pass product data in URL
+    window.location.href = `/results.html?products=${encodeURIComponent(JSON.stringify(data.products))}`;
 });
