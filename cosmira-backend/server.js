@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json()); // Allows server to handle JSON data
 
 // Connect to MongoDB
-mongoose.connect('mongodb+srv://<reginaisabellla>:<cosmira25>@cosmira.dktef.mongodb.net/?retryWrites=true&w=majority&appName=cosmira', {
+mongoose.connect('mongodb+srv://reginaisabellla:cosmira25@cosmira.dktef.mongodb.net/?retryWrites=true&w=majority&appName=cosmira', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -41,4 +41,4 @@ app.post('/api/match-results', async (req, res) => {
 });
 
 // Start the server on port 5000
-app.listen(5000, () => console.log('Server running on port 5000'));
+app.listen(5000, () => console.log('connection made'));
