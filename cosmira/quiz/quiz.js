@@ -1,3 +1,5 @@
+console.log("quiz.js is loaded!");
+
 document.getElementById("quiz-form").addEventListener("submit", async function (event) {
     event.preventDefault(); // Prevent form from reloading
 
