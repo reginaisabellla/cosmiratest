@@ -1,19 +1,27 @@
 // Get products from URL parameters
 const urlParams = new URLSearchParams(window.location.search);
-const products = JSON.parse(decodeURIComponent(urlParams.get('products')));
+const products = JSON.parse(decodeURIComponent(urlParams.get("products")) || "[]");
 
-// Render matched products
-const productGrid = document.querySelector('.product-grid');
+// Select product grid container
+const productGrid = document.querySelector(".product-grid");
 
-products.forEach(product => {
-    const productCard = document.createElement('div');
-    productCard.classList.add('product-card');
-    
-    productCard.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <h3>${product.name}</h3>
-        <p>Brand: ${product.brand}</p>
-    `;
+// Clear previous results
+productGrid.innerHTML = "";
 
-    productGrid.appendChild(productCard);
-});
+// Display matched products
+if (products.length > 0) {
+    products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        productCard.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>Brand: ${product.brand}</p>
+        `;
+
+        productGrid.appendChild(productCard);
+    });
+} else {
+    productGrid.innerHTML = "<p>No matches found. Try again with different options.</p>";
+}
