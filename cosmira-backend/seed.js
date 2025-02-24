@@ -28,7 +28,7 @@ const products = [
         finish: "natural",
         undertone: ["neutral", "cool"],
         skinConcerns: ["dryness"],
-        image: "foundation1.png"
+        image: "../assests/img/rec3.png"
     },
     {
         name: "Dior Forever Skin Glow",
@@ -38,7 +38,7 @@ const products = [
         finish: "matte",
         undertone: ["warm"],
         skinConcerns: ["oily skin", "acne"],
-        image: "foundation2.png"
+        image: "../assests/img/rec2.png"
     }
 ];
 

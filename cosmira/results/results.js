@@ -15,7 +15,7 @@ if (products.length > 0) {
         productCard.classList.add("product-card");
 
         productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
+            <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='../assests/img/placeholder.png'">
             <h3>${product.name}</h3>
             <p>Brand: ${product.brand}</p>
         `;
