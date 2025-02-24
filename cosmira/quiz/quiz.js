@@ -24,7 +24,7 @@ document.getElementById("quiz-form").addEventListener("submit", async function (
         console.log("Received match results:", data);
 
         // Redirect user to results.html with product data
-        window.location.href = `../results/results.html?products=${encodeURIComponent(JSON.stringify(data.products))}`;
+        window.location.href = `/cosmira/results/result.html?products=${encodeURIComponent(JSON.stringify(data.products))}`;
     } catch (error) {
         console.error("Error fetching match results:", error);
         alert("There was an error fetching match results. Please try again.");
