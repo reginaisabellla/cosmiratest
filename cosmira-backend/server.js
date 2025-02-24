@@ -6,7 +6,7 @@ const app = express();
 
 // ✅ Allow CORS requests from your GitHub Pages site
 app.use(cors({
-    origin: ["https://yourusername.github.io", "http://localhost:5500"],
+    origin: ["https://reginaisabellla.github.io", "http://localhost:5500"],
     methods: "GET,POST",
     allowedHeaders: "Content-Type"
 }));
