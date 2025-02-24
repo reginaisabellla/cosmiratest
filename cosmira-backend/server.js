@@ -3,16 +3,23 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
-app.use(express.json()); // Allows server to handle JSON data
 
-// Connect to MongoDB
-mongoose.connect('mongodb+srv://reginaisabellla:cosmira25@cosmira.dktef.mongodb.net/?retryWrites=true&w=majority&appName=cosmira', {
+// ✅ Allow requests from your GitHub Pages URL (Update this with your actual username)
+app.use(cors({
+    origin: ["https://reginaisabellla.github.io", "http://localhost:5500"], // Add localhost for testing
+    methods: "GET,POST",
+    allowedHeaders: "Content-Type"
+}));
+
+app.use(express.json()); // Middleware to parse JSON requests
+
+// ✅ Connect to MongoDB
+mongoose.connect('mongodb+srv://reginaisabellla:cosmira25@cosmira.dktef.mongodb.net/cosmira', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
 
-// Define the Product Schema (Database Structure)
+// ✅ Define the Product Schema
 const Product = mongoose.model('Product', new mongoose.Schema({
     name: String,
     brand: String,
@@ -24,21 +31,31 @@ const Product = mongoose.model('Product', new mongoose.Schema({
     image: String
 }));
 
-// API: Match Quiz Answers to Products
+// ✅ Create the `/api/match-results` Route
 app.post('/api/match-results', async (req, res) => {
+    console.log("Received request at /api/match-results");
+
     const { skinType, coverage, finish, undertone, skinIssues } = req.body;
 
-    // Find products that match user preferences
-    const matchedProducts = await Product.find({
-        skinType: skinType,  // Match skin type
-        coverage: { $in: coverage },  // Match coverage preferences
-        finish: finish,  // Match foundation finish
-        undertone: { $in: undertone },  // Match undertone
-        skinConcerns: { $in: skinIssues } // Match skin concerns
-    }).limit(10);
+    try {
+        // ✅ Query the database for matching products
+        const matchedProducts = await Product.find({
+            skinType: { $in: skinType || [] },  // Match any provided skinType
+            coverage: { $in: coverage || [] },  // Match any provided coverage
+            finish: finish || { $exists: true },  // If no finish is provided, return all
+            undertone: { $in: undertone || [] },  // Match undertones
+            skinConcerns: { $in: skinIssues || [] }  // Match skin concerns
+        }).limit(10);
 
-    res.json({ products: matchedProducts });
+        console.log("Matched products:", matchedProducts);
+        res.json({ products: matchedProducts });
+
+    } catch (error) {
+        console.error("Database query error:", error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
 });
 
-// Start the server on port 5000
-app.listen(5000, () => console.log('connection made'));
+// ✅ Start the server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
