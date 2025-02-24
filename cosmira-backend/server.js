@@ -4,9 +4,9 @@ const cors = require('cors');
 
 const app = express();
 
-// ✅ Allow requests from your GitHub Pages URL (Update this with your actual username)
+// ✅ Allow CORS requests from your GitHub Pages site
 app.use(cors({
-    origin: ["https://reginaisabellla.github.io", "http://localhost:5500"], // Add localhost for testing
+    origin: ["https://yourusername.github.io", "http://localhost:5500"],
     methods: "GET,POST",
     allowedHeaders: "Content-Type"
 }));
@@ -14,7 +14,7 @@ app.use(cors({
 app.use(express.json()); // Middleware to parse JSON requests
 
 // ✅ Connect to MongoDB
-mongoose.connect('mongodb+srv://reginaisabellla:cosmira25@cosmira.dktef.mongodb.net/cosmira', {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -38,13 +38,12 @@ app.post('/api/match-results', async (req, res) => {
     const { skinType, coverage, finish, undertone, skinIssues } = req.body;
 
     try {
-        // ✅ Query the database for matching products
         const matchedProducts = await Product.find({
-            skinType: { $in: skinType || [] },  // Match any provided skinType
-            coverage: { $in: coverage || [] },  // Match any provided coverage
-            finish: finish || { $exists: true },  // If no finish is provided, return all
-            undertone: { $in: undertone || [] },  // Match undertones
-            skinConcerns: { $in: skinIssues || [] }  // Match skin concerns
+            skinType: { $in: skinType || [] },
+            coverage: { $in: coverage || [] },
+            finish: finish || { $exists: true },
+            undertone: { $in: undertone || [] },
+            skinConcerns: { $in: skinIssues || [] }
         }).limit(10);
 
         console.log("Matched products:", matchedProducts);
@@ -56,6 +55,6 @@ app.post('/api/match-results', async (req, res) => {
     }
 });
 
-// ✅ Start the server
-const PORT = process.env.PORT || 5000;
+// ✅ Set Correct Port for Render
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
