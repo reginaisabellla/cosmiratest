@@ -131,6 +131,7 @@ p {
   flex-direction: column;
   gap: 10px;
   padding: 20px;
+  text-align: center;
 
 }
 .button1 {
@@ -163,6 +164,7 @@ p {
   padding: 15px;
   font-size: 16px;
   cursor: pointer;
+  text-decoration: none;
   transition: background 0.3s;
   box-shadow: 0 0 15px 5px #30133a;
 }
@@ -181,6 +183,7 @@ p {
   font-weight: bold;
   padding: 15px;
   font-size: 16px;
+  text-decoration: none;
   cursor: pointer;
   transition: background 0.3s;
   box-shadow: 0 0 15px 5px #30133a; 
