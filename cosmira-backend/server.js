@@ -5,6 +5,11 @@ const cors = require('cors');
 const app = express();
 
 // ✅ Allow CORS requests from your GitHub Pages site
+app._router.stack.forEach((r) => {
+    if (r.route && r.route.path) {
+        console.log(`Available route: ${r.route.path}`);
+    }
+});
 app.use(cors({
     origin: ["https://reginaisabellla.github.io", "http://localhost:5500"],
     methods: "GET,POST",
@@ -58,3 +63,4 @@ app.post('/api/match-results', async (req, res) => {
 // ✅ Set Correct Port for Render
 const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
