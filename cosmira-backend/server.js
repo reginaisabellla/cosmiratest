@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
-// ✅ Allow CORS requests from your GitHub Pages site
+// ✅ Allow CORS requests from your GitHub Pages sit
 app._router.stack.forEach((r) => {
     if (r.route && r.route.path) {
         console.log(`Available route: ${r.route.path}`);
