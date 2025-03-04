@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cosmira</title>
-    <script src="../review/review.js"></script>
-    <link rel="stylesheet" href="../review/writereview.css" />
+    <link rel="stylesheet" href="writereview.css" />
+    <script src="writereview.js" defer></script>
   </head>
   <body>
     <!-- Header Section -->
@@ -22,9 +22,7 @@
       </div>
       <nav>
         <ul class="nav-links">
-          <li>
-            <a class="nav-link" href="../about/about.html">ABOUT</a>
-          </li>
+          <li><a class="nav-link" href="../about/about.html">ABOUT</a></li>
           <li><a class="nav-link" href="../quiz/quiz.html">QUIZ</a></li>
           <li>
             <a class="nav-link" href="../discover/discover.html">DISCOVER</a>
@@ -53,6 +51,7 @@
         </div>
         <button class="create-review-page">Reviews Page</button>
       </aside>
+
       <main class="create-review-section">
         <h1 class="create-review-heading">Create A Review</h1>
         <div class="create-review-container">
@@ -71,10 +70,67 @@
             placeholder="Create a review..."
           ></textarea>
 
-          <!-- Buttons for Skin Type and Product Tags -->
+          <!-- Tag Selection Dropdowns -->
           <div class="tag-buttons">
-            <button class="tag-btn">+ Skin Type</button>
-            <button class="tag-btn">+ Product Tags</button>
+            <div class="dropdown-container">
+              <button class="tag-btn" id="skinTypeBtn">+ Skin Type</button>
+              <div class="dropdown">
+                <div class="dropdown-content" id="skinTypeOptions">
+                  <label><input type="checkbox" value="Oily" /> Oily</label>
+                  <label><input type="checkbox" value="Dry" /> Dry</label>
+                  <label
+                    ><input type="checkbox" value="Acne Prone" /> Acne
+                    Prone</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Combination" />
+                    Combination</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Sensitive" />
+                    Sensitive</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="dropdown-container">
+              <button class="tag-btn" id="productTypeBtn">
+                + Product Tags
+              </button>
+              <div class="dropdown">
+                <div class="dropdown-content" id="productTypeOptions">
+                  <label
+                    ><input type="checkbox" value="Natural Finish" /> Natural
+                    Finish</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Good Coverage" /> Good
+                    Coverage</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Medium Coverage" /> Medium
+                    Coverage</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Light Coverage" /> Light
+                    Coverage</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Long-Wear" />
+                    Long-Wear</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Matte Finish" /> Matte
+                    Finish</label
+                  >
+                  <label
+                    ><input type="checkbox" value="Dewy Finish" /> Dewy
+                    Finish</label
+                  >
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Photo Upload -->
@@ -86,13 +142,10 @@
               accept="image/*"
               style="display: none"
             />
-            <!-- Post Button -->
             <button class="post-button">Post</button>
           </div>
         </div>
       </main>
     </div>
-
-    <script src="writereview.js"></script>
   </body>
 </html>
