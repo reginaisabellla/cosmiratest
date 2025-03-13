@@ -44,6 +44,7 @@
           <h2>Question 1.</h2>
           <div class="quiz-text">
             <p>Select the skin color range MOST accurate to yours:</p>
+            <span id="skin-color-error"></span>
           </div>
           <div class="color-buttons">
             <label class="skin-color">
@@ -112,19 +113,20 @@
           <h2>Question 2.</h2>
           <div class="quiz-text">
             <p>What is your skin type?</p>
+            <span id="skin-type-error"></span>
           </div>
           <div class="skin-type">
           <label>
-            <input type="radio" name="skin-type" value="Normal" required/>Normal 
+            <input type="radio" name="skin-type" value="Normal" />Normal 
           </label><br>
           <label>
-            <input type="radio" name="skin-type" value="dry" required/>Dry 
+            <input type="radio" name="skin-type" value="dry" />Dry 
           </label><br>
           <label>
-            <input type="radio" name="skin-type" value="oily" required/>Oily 
+            <input type="radio" name="skin-type" value="oily" />Oily 
           </label><br>
           <label>
-            <input type="radio" name="skin-type" value="combination" required/>Combination <br>
+            <input type="radio" name="skin-type" value="combination"/>Combination <br>
           </label>
           </div>
         </div>  
@@ -132,6 +134,7 @@
           <h2>Question 3.</h2>
           <div class="quiz-text">
             <p>Do you have any skin concerns?</p>
+            <span id="skin-issue-error"></span>
           </div>
           <div class="skin-issue">
             <!---add js to make sure checkbox input required-->
@@ -174,13 +177,13 @@
           </div>
           <div class="coverage">
             <label>
-              <input type="checkbox" name="skin-issue" value="sheer" />Sheer
+              <input type="checkbox" name="coverage" value="sheer" />Sheer
             </label><br>
             <label>
-              <input type="checkbox" name="skin-issue" value="medium" />Medium
+              <input type="checkbox" name="coverage" value="medium" />Medium
             </label><br>
             <label>
-              <input type="checkbox" name="skin-issue" value="full" />Full
+              <input type="checkbox" name="coverage" value="full" />Full
             </label><br>
           </div>
        
@@ -192,13 +195,13 @@
           </div>
           <div class="finish">
             <label>
-              <input type="radio" name="finish" value="sheer" required/>Matte
+              <input type="radio" name="finish" value="sheer"/>Matte
             </label><br>
             <label>
-              <input type="radio" name="finish" value="medium" required/>Dewy
+              <input type="radio" name="finish" value="medium" />Dewy
             </label><br>
             <label>
-              <input type="radio" name="finish" value="full" required/>Natural
+              <input type="radio" name="finish" value="full" />Natural
             </label><br>
           </div>
         </div> 

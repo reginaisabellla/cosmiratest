@@ -1,38 +1,89 @@
-document.addEventListener("DOMContentLoaded", function () {
-    console.log("quiz.js is loaded!");
+const form = document.getElementById('quiz-form');
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-    document.getElementById("quiz-form").addEventListener("submit", async function (event) {
-        event.preventDefault();
-        console.log("Form submitted! Preventing page reload...");
+  
+    let skinColor = document.forms["quiz-form"]["skin-colortest"].value;
+    if (skinColor == "") {
+        let errorSpan = document.getElementById("skin-color-error");
+        errorSpan.textContent = "Please choose a skin color.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+        return false;
+    }
+    let skinType = document.forms["quiz-form"]["skin-type"].value;
+    if (skinType== "") {
+        let errorSpan = document.getElementById("skin-type-error");
+        errorSpan.textContent = "Please choose a skin type.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+        return false;
+    }
+    let skinIssue = document.forms["quiz-form"]["skin-issue"].value;
+    if (skinIssue== "") {
+        let errorSpan = document.getElementById("skin-issue-error");
+        errorSpan.textContent = "Please choose a skin issue.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+  
+      return false;
+    }
+    let undertone = document.forms["quiz-form"]["undertone"].value;
+    if (undertone== "") {
+        let errorSpan = document.getElementById("undertone-error");
+        errorSpan.textContent = "Please choose an undertone.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+  
+      return false;
+    }
+    let coverage = document.forms["quiz-form"]["coverage"].value
+    if (coverage== "") {
+        let errorSpan = document.getElementById("coverage-error");
+        errorSpan.textContent = "Please choose a coverage.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+      return false;
+    }
+    let finish = document.forms["quiz-form"]["finish"].value;  
+    if (finish== "") {
+        let errorSpan = document.getElementById("finish-error");
+        errorSpan.textContent = "Please choose a finish.";
+        errorSpan.style.display = "block";
+        errorSpan.style.textAlign = "center";
+        errorSpan.style.color = "red";
+      return false;
+    }
+    
 
-        // Collect quiz answers
-        const answers = {
-            skinColor: document.querySelector('input[name="skin-color"]:checked')?.value || null,
-            skinType: document.querySelector('input[name="skin-type"]:checked')?.value || null
-        };
 
-        console.log("Submitting quiz answers:", answers);
+    
 
-        try {
-            const response = await fetch("https://cosmiratest.onrender.com/api/match-results", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(answers)
-            });
 
-            if (!response.ok) throw new Error("Failed to fetch match results.");
 
-            const data = await response.json();
-            console.log("Received match results:", data);
 
-            // Redirect user to results.html with product data
-            const redirectURL = `/cosmira/results/result.html?products=${encodeURIComponent(JSON.stringify(data.products))}`;
-            console.log("Redirecting to:", redirectURL);
+/*fetch('/submit-form', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+    console.log('Success:', result);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });.*/
 
-            window.location.href = redirectURL;
-        } catch (error) {
-            console.error("Error fetching match results:", error);
-            alert("There was an error fetching match results. Please try again.");
-        }
-    });
+
 });
+
+
+
